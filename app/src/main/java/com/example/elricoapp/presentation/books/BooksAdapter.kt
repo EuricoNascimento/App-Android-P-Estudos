@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.elricoapp.R
 import com.example.elricoapp.data.model.Book
 
+
 class BooksAdapter (
     private val books: List<Book>,
     val onItemClickListener: ((book: Book) -> Unit)
