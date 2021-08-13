@@ -14,9 +14,9 @@ class BookDetailsActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_details)
 
-        /*toolbarMain2.apply {
+        toolbarMain2.apply {
             title = "New York Books"
-        }*/
+        }
         setSupportActionBar(toolbarMain)
 
         tv_booksdescription_title_content.text = intent.getStringExtra(EXTRA_TITLE)
