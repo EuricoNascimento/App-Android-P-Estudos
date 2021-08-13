@@ -23,4 +23,17 @@ class BookDetailsActivity {
         tv_bookdetails_description_content.text = intent.getStringExtra(EXTRA_DESCRIPTION)
     }
 
+    companion object {
+        private const val EXTRA_TITLE = "EXTRA_TITLE"
+        private const val EXTRA_DESCRIPTION = "EXTRA_DESCRIPTION"
+
+        fun getStartIntent(context: Context, title: String, description: String): Intent{
+            return Intent(Context, BookDetailsActivity::class.java).apply {
+                putExtra(EXTRA_TITLE, title)
+                putExtra(EXTRA_DESCRIPTION, description)
+            }
+        }
+        
+    }
+
 }
