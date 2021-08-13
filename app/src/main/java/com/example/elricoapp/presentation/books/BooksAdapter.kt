@@ -18,7 +18,7 @@ class BooksAdapter (
 
     override fun onBindViewHolder(Viewholder: BooksViewHolder, position: Int) {
         val book = books[position]
-        ViewHolder.bindView(book)
+        RecyclerView.ViewHolder.bindView(book)
     }
 
     override fun getItemCount() = books.count()
