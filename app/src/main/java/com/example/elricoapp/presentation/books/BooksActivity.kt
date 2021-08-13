@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.elricoapp.R
 import com.example.elricoapp.presentation.details.BookDetailsActivity
+import kotlinx.android.synthetic.main.activity_books.*
 
 
 class BooksActivity: AppCompatActivity() {
