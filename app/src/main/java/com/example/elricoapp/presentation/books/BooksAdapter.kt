@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.elricoapp.R
 import com.example.elricoapp.data.model.Book
+import kotlinx.android.synthetic.main.item_books.view.*
+
 
 class BooksAdapter (
     private val books: List<Book>,
@@ -18,7 +20,7 @@ class BooksAdapter (
 
     override fun onBindViewHolder(Viewholder: BooksViewHolder, position: Int) {
         val book = books[position]
-        ViewHolder.bindView(book)
+        RecyclerView.ViewHolder.bindView(book)
     }
 
     override fun getItemCount() = books.count()
