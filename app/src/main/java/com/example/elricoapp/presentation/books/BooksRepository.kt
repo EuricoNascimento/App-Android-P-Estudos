@@ -14,14 +14,20 @@ import retrofit2.Response
 class BooksRepository {
 
     fun getBooksRetrofit(callback: (lsBooks: List<Book>) -> Unit) {
-        APIService.services.getBooks().enqueue(object : Callback<BookBodyResponse> {
+        
+        APIService.services.getBooks().enqueue(object : Callback<BookBodyResponse>) {
+
             override fun onResponse(
                 call: Call<BookBodyResponse>,
                 response: Response<BookBodyResponse>
             ) {
+
                 if (response.isSuccessful) {
+
                     val books: MutableList<Book> = mutableListOf()
+
                     response.body()?.let { bookBodyResponse ->
+
                         for (result in bookBodyResponse.booksResultResponses) {
                             val book = Book(
                                 title = result.booksdetails[0].title,
@@ -30,18 +36,23 @@ class BooksRepository {
                             )
                             books.add(book)
                         }
+
                         callback.invoke(books)
                     }
                 }
             }
 
+
             override fun onFailure(call: Call<BookBodyResponse>, t: Throwable) {
                 TODO("Not yet implemented")
             }
-        })
+
+        }
     }
+
     //coroutine usa suspensao de threads
     suspend fun getBookscoroutine(): List<Book> {
+
         return withContext(Dispatchers.Default) {
             delay(3000)
             listOf(
@@ -53,4 +64,5 @@ class BooksRepository {
             )
         }
     }
+    
 }

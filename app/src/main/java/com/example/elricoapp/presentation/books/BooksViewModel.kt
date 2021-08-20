@@ -22,9 +22,9 @@ class BooksViewModel(private val repository: BooksRepository): ViewModel {
         }
     }
 
-    class BooksViewModelFactory(
-        private val repository: BooksRepository
-    ) : ViewModelProvider.Factory{
+    class BooksViewModelFactory(private val repository: BooksRepository)
+    : ViewModelProvider.Factory{
+
         override fun <T: ViewModel?> create(modelClass: Class<T>): T {
             return BooksViewModel(repository) as T
         }
